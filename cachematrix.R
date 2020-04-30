@@ -15,7 +15,6 @@ makeCacheMatrix <- function(x = matrix()) {
              getinverse = getinverse)
 }
 
-z <- makeCacheMatrix(x)
 
 ## This function computes the inverse of the special "matrix" returned by makeCacheMatrix
 
@@ -26,12 +25,12 @@ cacheSolve <- function(x, ...) {
       return(m)
     }
     data <- x$get()
-    m <- inverse(data, ...)
+    m <- solve(data, ...)
     x$setinverse(m)
     m
 }
 
-cacheSolve(z)
+
 
 ## Example: Caching the Mean of a Vector 
 
